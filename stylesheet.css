@@ -1,0 +1,257 @@
+body {
+
+background-color: #f9fffe;
+}
+
+h1 {
+
+font-family:  Futura;
+text-align: center;
+
+}
+h3{
+
+font-family: Futura，Times;
+text-align: center;
+margin-left:100px;
+margin-right:100px;
+
+
+}
+
+h5{
+
+
+text-align: center;
+
+}
+
+
+h2{
+font-family: Futura，Times;
+text-align: center;
+margin-left:100px;
+margin-right:100px
+
+
+
+}
+
+td{
+
+padding-top:10px;
+
+}
+
+li {
+border : 0px solid #020305;
+font-family: Futura, Tahoma, sans-serif;
+color:#000102;
+border-radius:5px 5px; 
+background-color: #81c2ef;
+display: inline;
+padding: 0px 0px 0px 0px;
+
+}
+
+#leftpic{
+
+border: 5px solid black;
+
+margin-left:20px;
+float:left;
+display: inline;
+}
+
+.leftpic1{
+
+border: 5px solid black;
+margin-left:100px;
+display: inline;
+width: 1000px;
+height:600px;
+
+}
+
+.leftpic2{
+
+border: 5px solid black;
+margin-left:100px;
+display: inline;
+width: 600px;
+height:1000px;
+
+}
+
+
+.leftpic3{
+
+border: 5px solid black;
+
+margin-top:10px;
+margin-right: 20px;
+float:right;
+display: inline;
+width: 500px;
+height:700px;
+}
+
+.uu{
+
+font-family: Times;
+text-align: left;
+margin-left:50px;
+margin-right:50px;
+
+}
+
+
+
+
+
+.text {
+
+text-align: center;
+
+}
+
+.picc{
+
+magrin-left:60px;
+
+}
+
+.smaller{
+
+border: 5px solid black;
+width: 50%
+height:100px;
+margin-left: 450px
+
+}
+
+.gallery{
+
+border: 5px solid black;
+
+margin-left: 50px;
+margin-top:20px;
+
+
+}
+
+#lol{
+
+margin-left: 100px;
+
+}
+
+.veg{
+
+border: 5px solid black;
+width: 50%
+height:100px;
+margin-left: 500px
+
+}
+
+.mid{
+
+border: 5px solid black;
+width: 50%
+height:100px;
+margin-left: 400px
+
+}
+
+
+
+.midd{
+
+
+border: 5px solid black;
+width: 50%
+height:100px;
+margin-left: 350px
+
+}
+
+
+}
+#rightpic{
+
+border: 5px solid black;
+margin-top:10px;
+margin-left: 20px;
+display: inline;
+
+
+}
+
+
+
+
+h4 {
+ text-align: left;
+  margin-right: 50px;
+  margin-left: 50px;
+  font-family: Times;
+}
+
+
+.top-nav {
+    float: right;
+    width: 100%;
+  
+    text-align: center;
+}
+.top-nav ul.res {
+    padding:-10em -10em -10em -10em;
+    list-style: none;
+}
+.top-nav ul.res li{
+    display:inline-block;
+}
+.top-nav ul.res li a {
+    font-size: 1.05em;
+    color: #000;
+    padding: 1em;
+    display: block;
+}
+
+
+.sub-nav {
+    float: right;
+    width: 100%;
+  
+    text-align: left;
+}
+.sub-nav ul.res {
+    padding:-10em -10em -10em -10em;
+    list-style: none;
+}
+.sub-nav ul.res li{
+    display:inline-block;
+}
+.sub-nav ul.res li a {
+    font-size: 1.05em;
+    color: #000;
+    padding: 1em;
+    display: block;
+}
+
+iframe{
+
+
+
+ margin-left: 80px;
+
+
+
+}
+
+.lala{
+ margin-left: 450px;
+
+}
+
