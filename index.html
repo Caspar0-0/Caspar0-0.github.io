@@ -1,97 +1,377 @@
 <!DOCTYPE html>
-<html>   
- <head>  
-   <link type="text/css" rel="stylesheet" href="stylesheet.css"/> 
-   <title> Junjie (Caspar) Chen's Homepage </title> 
-     
-    <style type="text/css">
-        td{
-            height:100px;
-            width:700px; 
-        }
- 
-        #leftUp{
-        
-          background-color: #f9fffe;
-           
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Junjie (Caspar) Chen — Data Engineer</title>
+<meta name="description" content="Portfolio of Junjie 'Caspar' Chen — Data Engineer at Taskrabbit. Pipelines, analytics, and applied statistics." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
 
-        }
-        #upCenter{
-           background-color: #f9fffe;
-        }
-         #upRight{
-            background-color:#f9fffe;
-        }
-       
-       
-        #centerLeft{
-            background-color: #f9fffe;
-        }
-        #center{
-             background-color: #f9fffe;
-        }
-       
-        #leftDown{
-            background-color: #f9fffe;
-        }
-        #downCenter{
-        
-           background-color: #f9fffe;
-        }
-    
-    </style>
- </head>  
-      <body>
-      			 
-		 <h1> Junjie Caspar Chen's Homepage </h1>
-       <h3> "You don't have to be a mathematician to have a feel for numbers."   ----- John Forbes Nash Jr. <h3>
-      
-       
-      
-       <div class="top-nav">	       											
-							<ul class="res">
-								<li><a href="index.html">Home</a></li>						
-								<li><a href="Mystyle.html">My Works</a></li>
-								<li><a href="Caspar-CV.pdf">My Resume</a></li>	
-								<li><a href="gallery.html">Gallery</a></li>	
-														
-							</ul>
-				 </div>
-				 
-	 
-	  
-       <div class="top-nav">
-       <li>		
-     <img class="leftpic3" src="images/2055192693.jpg"/>
-  
-      </li>
-      
-        <li>	
+<div class="grain" aria-hidden="true"></div>
+
+<header class="ticker" role="banner">
+  <div class="ticker__inner">
+    <span class="mono">№ 001</span>
+    <span class="mono dim">Portfolio · Vol. VII</span>
+    <span class="mono dim">Updated · MMXXVI</span>
+    <span class="mono dim">37.5485° N / 121.9886° W</span>
+    <span class="mono dim">陈浚杰 · Fremont, CA</span>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Primary">
+  <a href="#top" class="nav__brand">
+    <span class="serif italic">C</span><span class="mono">/jc</span>
+  </a>
+  <ul class="nav__list">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="resume.html">Résumé <sup class="mono">↗</sup></a></li>
+  </ul>
+</nav>
+
+<main id="top">
+
+  <!-- ============== MASTHEAD ============== -->
+  <section class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__left">
+        <p class="legal mono">陈浚杰 · b. Junjie, goes by</p>
+        <h1 class="hero-name">
+          <span class="hero-name__first">Caspar</span>
+          <span class="hero-name__last">Chen<span class="dot">.</span></span>
+        </h1>
+
+        <ul class="istate">
+          <li>I am a <mark>data engineer</mark> at <mark>Taskrabbit</mark>.</li>
+          <li>I grew up in China and now live in <mark>Fremont, CA</mark>.</li>
+          <li>I studied <mark>applied math</mark> at UW–Madison and <mark>statistics</mark> at Columbia.</li>
+          <li>I spent 2020–2021 working on <mark>Apple Maps</mark> data quality.</li>
+          <li>I write a lot of <mark>SQL</mark>, plenty of <mark>Python</mark>, and the occasional <mark>R</mark> notebook.</li>
+          <li>I'm fluent in <mark>Snowflake</mark>, <mark>dbt</mark>, and <mark>Airflow 3</mark>.</li>
+          <li>I think the best dashboards are the ones nobody has to defend.</li>
+          <li>I read actuarial textbooks for fun. I know how that sounds.</li>
+          <li>I shoot 35mm in my spare time — some of it lives in the <a href="#gallery">gallery</a>.</li>
+          <li>I have a <a href="resume.html">résumé</a> if you want the formal version.</li>
+        </ul>
+
+        <a href="#work" class="scroll-cue mono" aria-label="Scroll down">↓ Continue reading</a>
+      </div>
+
+      <figure class="masthead__portrait">
+        <img src="images/caspar-portrait.png" alt="Portrait of Caspar Chen" />
+        <figcaption class="mono dim">Portrait · Fremont, MMXXVI</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============== ABOUT ============== -->
+  <section class="about" id="about">
+    <div class="rule"><span class="mono dim">§ 01 — About</span></div>
+    <div class="about__grid">
+      <aside class="about__side">
+        <div class="about__pull">
+          <span class="mono dim">A note on names</span>
+          <p>
+            My legal name is <strong>Junjie Chen</strong> (<span class="zh">陈浚杰</span>).
+            I&rsquo;ve gone by <em>Caspar</em> since college — pick whichever you prefer.
+          </p>
+        </div>
+      </aside>
+
+      <div class="about__body">
+        <p class="kicker mono">A quiet manifesto, more or less.</p>
         <p>
-        <h4>Current graduate Student at Columbia University, M.A. Statistics; 2018 B.S. Applied Math, Emphasis on Actuarial Option, and Certificate in Business at the University of Wisconsin - Madison.
-        </h4>
-        
-        <h4> </h4>
-          <br>
-         <h3 class=uu> Contact Information</h3>
-      
-         <h4 class=uu> 
-     Phone: 207-286-4242            
-</h4>
-<h4 class=uu> 
-            
-E-mail:	jc5067@columbia.edu       </h4>
-         
+          I'm a data engineer with a statistician's nervous system. I trained as an applied
+          mathematician at <strong>Wisconsin–Madison</strong>, then took the M.A. in
+          Statistics at <strong>Columbia</strong>, then promptly discovered that
+          most of the interesting problems live downstream of the model — in the joins,
+          the late-arriving rows, the half-truths in a marketing event spec.
         </p>
-        
-         </li>
-	
-    
-     
-      
- 
-    
-  
+        <p>
+          Today I work on Taskrabbit's data platform. That means designing dbt models
+          that hold up under real traffic, scheduling Airflow DAGs that fail loudly
+          instead of silently, and writing the kind of SQL that the next engineer
+          actually wants to read.
+        </p>
+        <p>
+          Off the clock: long-exposure photography, the occasional R notebook, and
+          a stubborn habit of reading actuarial textbooks for fun.
+        </p>
 
-      </body>
-        </html>
+        <ul class="about__list">
+          <li><span class="mono dim">Based</span> Fremont, California</li>
+          <li><span class="mono dim">Role</span> Data Engineer · Taskrabbit</li>
+          <li><span class="mono dim">Speaks</span> 中文 · English · un poco de Español</li>
+          <li><span class="mono dim">Reach</span> <a class="ink" href="mailto:jchen@taskrabbit.com">jchen@taskrabbit.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SELECTED WORK ============== -->
+  <section class="work" id="work">
+    <div class="rule"><span class="mono dim">§ 02 — Selected work</span></div>
+
+    <h2 class="section-title display">
+      Things I&rsquo;ve <em>built</em>, broken, <br/>or quietly improved.
+    </h2>
+
+    <ol class="cards">
+      <li class="card">
+        <header class="card__head">
+          <span class="card__idx mono">01 / 05</span>
+          <span class="card__tag mono">Pipelines</span>
+        </header>
+        <h3 class="card__title serif">Event Lakehouse, end&#8209;to&#8209;end.</h3>
+        <p class="card__body">
+          Built and maintain the bronze→silver→gold layer of Taskrabbit's analytics warehouse:
+          Snowflake, dbt, and Airflow 3, with contracts and tests so downstream dashboards
+          don't quietly lie. Authored over 200 dbt models and the macros that keep them DRY.
+        </p>
+        <ul class="card__stack mono">
+          <li>Snowflake</li><li>dbt</li><li>Airflow 3</li><li>Python</li>
+        </ul>
+      </li>
+
+      <li class="card">
+        <header class="card__head">
+          <span class="card__idx mono">02 / 05</span>
+          <span class="card__tag mono">Modeling</span>
+        </header>
+        <h3 class="card__title serif">Marketplace economics, demystified.</h3>
+        <p class="card__body">
+          Designed the canonical "task lifecycle" fact table — one row, one task, every state
+          transition — so growth, ops, and finance finally agree on what a completed booking is.
+          Saved roughly a meeting a week, which is the real ROI.
+        </p>
+        <ul class="card__stack mono">
+          <li>SQL</li><li>dbt</li><li>Looker</li>
+        </ul>
+      </li>
+
+      <li class="card">
+        <header class="card__head">
+          <span class="card__idx mono">03 / 05</span>
+          <span class="card__tag mono">Statistics</span>
+        </header>
+        <h3 class="card__title serif">Bootstrap variance estimators in R.</h3>
+        <p class="card__body">
+          Graduate work at Columbia: empirical and parametric bootstrap estimators for the
+          variance of insurance claims, with confidence intervals validated against simulated
+          Poisson processes. The math still pays rent.
+        </p>
+        <ul class="card__stack mono">
+          <li>R</li><li>Bootstrap</li><li>Simulation</li>
+        </ul>
+        <a class="card__link mono" href="123.pdf">Read the writeup ↗</a>
+      </li>
+
+      <li class="card">
+        <header class="card__head">
+          <span class="card__idx mono">04 / 05</span>
+          <span class="card__tag mono">Actuarial</span>
+        </header>
+        <h3 class="card__title serif">Whole‑life insurance loss distributions.</h3>
+        <p class="card__body">
+          Simulated the loss‑at‑issue random variable for a fully discrete whole‑life policy
+          under Makeham mortality, reconciled against the MLC Illustrative Life Table.
+          The kind of project that quietly teaches you to mistrust closed‑form answers.
+        </p>
+        <ul class="card__stack mono">
+          <li>Excel</li><li>VBA</li><li>Survival models</li>
+        </ul>
+      </li>
+
+      <li class="card">
+        <header class="card__head">
+          <span class="card__idx mono">05 / 05</span>
+          <span class="card__tag mono">ML · for fun</span>
+        </header>
+        <h3 class="card__title serif">Neural style transfer, on a Flask.</h3>
+        <p class="card__body">
+          A small web app that ports the Gatys et al. style‑transfer algorithm into a Flask
+          front end. More an exercise in deployment plumbing than novel research — and a
+          reminder that GPUs are humbling.
+        </p>
+        <ul class="card__stack mono">
+          <li>PyTorch</li><li>Flask</li><li>Docker</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============== EXPERIENCE ============== -->
+  <section class="experience" id="experience">
+    <div class="rule"><span class="mono dim">§ 03 — Experience</span></div>
+    <h2 class="section-title display">A working <em>chronology</em>.</h2>
+
+    <ol class="timeline">
+      <li class="tl">
+        <span class="tl__year mono">2021 — present</span>
+        <div class="tl__body">
+          <h3 class="serif">Data Engineer · <span class="ink">Taskrabbit</span></h3>
+          <p>
+            Own large swaths of the analytics data platform. Build dbt models, Airflow DAGs,
+            and the contracts between them. Mentor junior engineers, run on‑call rotations,
+            and occasionally write the dashboard nobody asked for but everyone uses.
+          </p>
+        </div>
+      </li>
+
+      <li class="tl">
+        <span class="tl__year mono">2020 — 2021</span>
+        <div class="tl__body">
+          <h3 class="serif">Data Analyst, Maps · <span class="ink">Apple</span></h3>
+          <p>
+            Worked on Apple Maps data quality — surfacing routing anomalies, POI coverage
+            gaps, and the kind of ground‑truth discrepancies that you only notice when a
+            user reports them. Where I learned that "the data is correct" is always a
+            time‑bounded claim.
+          </p>
+        </div>
+      </li>
+
+      <li class="tl">
+        <span class="tl__year mono">2018 — 2020</span>
+        <div class="tl__body">
+          <h3 class="serif">M.A. Statistics · <span class="ink">Columbia University</span></h3>
+          <p>
+            Coursework in advanced data analysis, statistical machine learning, time series,
+            and nonparametric methods. Thesis‑adjacent work on Framingham heart‑study data.
+            Graduated with a 3.43 GPA and a healthy respect for assumptions.
+          </p>
+        </div>
+      </li>
+
+      <li class="tl">
+        <span class="tl__year mono">2014 — 2018</span>
+        <div class="tl__body">
+          <h3 class="serif">B.S. Applied Mathematics · <span class="ink">UW — Madison</span></h3>
+          <p>
+            Actuarial emphasis with a Certificate in Business. Passed early SOA exams,
+            ran the actuarial student club, and discovered that I liked the data more than
+            the reserves.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============== STACK ============== -->
+  <section class="stack" id="stack">
+    <div class="rule"><span class="mono dim">§ 04 — Stack &amp; credentials</span></div>
+    <h2 class="section-title display">Tools I reach for <em>without thinking</em>.</h2>
+
+    <div class="stack__grid">
+      <div class="stack__col">
+        <h4 class="mono">Warehouse &amp; modeling</h4>
+        <ul>
+          <li>Snowflake</li>
+          <li>dbt (Core &amp; Cloud)</li>
+          <li>PostgreSQL · MySQL</li>
+          <li>Looker · Tableau</li>
+        </ul>
+      </div>
+      <div class="stack__col">
+        <h4 class="mono">Orchestration</h4>
+        <ul>
+          <li>Apache Airflow 3</li>
+          <li>AWS (S3 · Lambda · EC2)</li>
+          <li>Docker</li>
+          <li>GitHub Actions</li>
+        </ul>
+      </div>
+      <div class="stack__col">
+        <h4 class="mono">Languages</h4>
+        <ul>
+          <li>SQL — fluent</li>
+          <li>Python — daily</li>
+          <li>R — for stats</li>
+          <li>Bash &amp; Make — quietly</li>
+        </ul>
+      </div>
+      <div class="stack__col">
+        <h4 class="mono">Recent certifications</h4>
+        <ul>
+          <li>Astronomer · Airflow 3 DAG Authoring <span class="mono dim">— 2026</span></li>
+          <li>Astronomer · Airflow 3 Fundamentals <span class="mono dim">— 2026</span></li>
+          <li>AWS Certified Cloud Practitioner <span class="mono dim">— 2025</span></li>
+          <li>TestDome SQL Certification <span class="mono dim">— 2020</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== GALLERY ============== -->
+  <section class="gallery" id="gallery">
+    <div class="rule"><span class="mono dim">§ 05 — Gallery</span></div>
+    <h2 class="section-title display">Outside the <em>terminal</em>.</h2>
+
+    <div class="gallery__grid">
+      <figure class="g g--tall"><img src="images/fam.jpg" alt=""/><figcaption class="mono dim">Pl. II — family.</figcaption></figure>
+      <figure class="g"><img src="images/415872487.jpg" alt=""/><figcaption class="mono dim">Pl. III — light.</figcaption></figure>
+      <figure class="g"><img src="images/club.jpg" alt=""/><figcaption class="mono dim">Pl. IV — Madison.</figcaption></figure>
+      <figure class="g g--wide"><img src="images/stop.jpg" alt=""/><figcaption class="mono dim">Pl. V — pause.</figcaption></figure>
+      <figure class="g"><img src="images/1522188649.jpg" alt=""/><figcaption class="mono dim">Pl. VI — city.</figcaption></figure>
+      <figure class="g"><img src="images/2062092138.jpg" alt=""/><figcaption class="mono dim">Pl. VII — road.</figcaption></figure>
+      <figure class="g g--tall"><img src="images/47240754.jpg" alt=""/><figcaption class="mono dim">Pl. VIII — winter.</figcaption></figure>
+      <figure class="g"><img src="images/1799457426.jpg" alt=""/><figcaption class="mono dim">Pl. IX — friends.</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ============== COLOPHON / FOOTER ============== -->
+  <footer class="colophon" id="contact">
+    <div class="rule"><span class="mono dim">§ 06 — Colophon</span></div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="serif italic">Let&rsquo;s build something honest&nbsp;—&nbsp;</span>
+        <span class="serif italic">Let&rsquo;s build something honest&nbsp;—&nbsp;</span>
+        <span class="serif italic">Let&rsquo;s build something honest&nbsp;—&nbsp;</span>
+        <span class="serif italic">Let&rsquo;s build something honest&nbsp;—&nbsp;</span>
+      </div>
+    </div>
+
+    <div class="colophon__grid">
+      <div>
+        <p class="mono dim">Reach me</p>
+        <a class="ink big" href="mailto:jchen@taskrabbit.com">jchen@taskrabbit.com</a>
+      </div>
+      <div>
+        <p class="mono dim">Elsewhere</p>
+        <ul class="links">
+          <li><a href="https://github.com/Caspar0-0">GitHub ↗</a></li>
+          <li><a href="https://www.linkedin.com/in/junjie-caspar-chen-901157127">LinkedIn ↗</a></li>
+          <li><a href="resume.html">Résumé (HTML) ↗</a></li>
+          <li><a href="Caspar-CV.pdf">CV (legacy PDF) ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mono dim">Colophon</p>
+        <p class="small">
+          Set in <em>Fraunces</em> and <em>JetBrains&nbsp;Mono</em>. Composed by hand in
+          plain HTML &amp; CSS. No frameworks, no trackers, no analytics —
+          just text that loads.
+        </p>
+      </div>
+    </div>
+
+    <div class="footline mono">
+      <span>© MMXXVI — J. C. Chen</span>
+      <span>Made in Fremont, CA</span>
+      <span>v 2.0 · ed. <em>quant editorial</em></span>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>

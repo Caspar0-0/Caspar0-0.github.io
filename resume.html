@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Junjie (Caspar) Chen — Résumé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #fafaf6;
+  --ink:   #161613;
+  --muted: #5e5c56;
+  --rule:  #cdc7b8;
+  --accent:#b8431d;
+  --serif: "Fraunces", "Times New Roman", serif;
+  --mono:  "JetBrains Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #efeadd; color: var(--ink); font-family: var(--serif); }
+body { padding: 2rem 1rem; }
+.page {
+  max-width: 8.5in;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 0.7in 0.75in;
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,.35), 0 2px 4px rgba(0,0,0,.08);
+  line-height: 1.42;
+  font-size: 10.5pt;
+}
+
+.toolbar {
+  max-width: 8.5in; margin: 0 auto 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .15em;
+  color: #4a463d;
+}
+.toolbar a, .toolbar button {
+  font: inherit; background: var(--ink); color: var(--paper);
+  border: 0; padding: .55rem .9rem; cursor: pointer; text-decoration: none;
+  letter-spacing: .15em;
+}
+.toolbar a:hover, .toolbar button:hover { background: var(--accent); }
+
+/* ---- Header ---- */
+.head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: end;
+  padding-bottom: .65rem;
+  border-bottom: 1.5px solid var(--ink);
+}
+.head h1 {
+  margin: 0;
+  font-family: "Instrument Serif", "Fraunces", serif;
+  font-size: 40pt;
+  line-height: .9;
+  letter-spacing: -.015em;
+  font-weight: 400;
+}
+.head h1 .first { font-style: normal; color: var(--muted); font-size: .55em; display: block; letter-spacing: 0; margin-bottom: .15em; }
+.head h1 em { color: var(--accent); font-style: italic; }
+.head .role {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: .35rem;
+}
+.head .contact {
+  font-family: var(--mono);
+  font-size: 8pt;
+  line-height: 1.6;
+  text-align: right;
+  color: var(--ink);
+}
+.head .contact a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+/* ---- Summary ---- */
+.summary {
+  margin: 1rem 0 1.2rem;
+  font-size: 11pt;
+  font-style: italic;
+  max-width: 70ch;
+  color: #2a2925;
+}
+
+/* ---- Sections ---- */
+section.r { margin-top: 1rem; }
+section.r > h2 {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 .55rem 0;
+  padding-bottom: .25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry { margin-bottom: .85rem; page-break-inside: avoid; }
+.entry__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: .75rem;
+  margin-bottom: .2rem;
+}
+.entry__title {
+  font-size: 11.5pt;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -.005em;
+}
+.entry__title .sep { color: var(--accent); margin: 0 .3rem; }
+.entry__title .org { font-style: italic; color: var(--ink); }
+.entry__meta {
+  font-family: var(--mono);
+  font-size: 8pt;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.entry ul {
+  margin: .15rem 0 0 0;
+  padding-left: 1.05rem;
+}
+.entry li { margin: .1rem 0; }
+.entry li::marker { color: var(--accent); content: "▪  "; }
+
+/* ---- Skills grid ---- */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .3rem 1.5rem;
+}
+.skills > div { display: grid; grid-template-columns: 6.5rem 1fr; gap: .4rem; }
+.skills .k {
+  font-family: var(--mono); font-size: 7.5pt;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--muted); padding-top: 2px;
+}
+
+/* ---- Education ---- */
+.edu .entry__title small {
+  display: block; font-size: 9.5pt; color: var(--muted);
+  font-style: normal; margin-top: .15rem;
+}
+
+/* ---- Certs ---- */
+.certs { display: grid; grid-template-columns: 1fr 1fr; gap: .15rem 1.5rem; }
+.certs li { font-size: 10pt; }
+.certs li small { font-family: var(--mono); font-size: 7.5pt; color: var(--muted); letter-spacing: .12em; }
+
+/* ---- Print ---- */
+@media print {
+  body { padding: 0; background: white; }
+  .toolbar { display: none; }
+  .page { box-shadow: none; max-width: none; margin: 0; padding: 0.5in 0.6in; }
+  a { text-decoration: none; color: inherit; }
+  @page { size: Letter; margin: 0.4in; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="index.html">← Back to portfolio</a>
+  <span>Résumé · Junjie (Caspar) Chen · MMXXVI</span>
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<article class="page">
+
+  <header class="head">
+    <div>
+      <h1><span class="first">Junjie Chen, who goes by</span><em>Caspar</em> Chen</h1>
+      <p class="role">Data Engineer · Analytics Engineering · Statistics</p>
+    </div>
+    <div class="contact">
+      Fremont, CA<br/>
+      <a href="mailto:jchen@taskrabbit.com">jchen@taskrabbit.com</a><br/>
+      <a href="https://www.linkedin.com/in/junjie-caspar-chen-901157127">linkedin.com/in/junjie-caspar-chen</a><br/>
+      <a href="https://github.com/Caspar0-0">github.com/Caspar0-0</a>
+    </div>
+  </header>
+
+  <p class="summary">
+    Data engineer with a statistics background and seven years of moving data from
+    "raw and suspicious" to "trusted and reportable." Strongest where SQL, dbt,
+    Airflow, and Snowflake meet — and where someone needs to write the contract
+    that keeps the numbers honest.
+  </p>
+
+  <!-- =================== EXPERIENCE =================== -->
+  <section class="r">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">
+          Data Engineer <span class="sep">·</span> <span class="org">Taskrabbit</span>
+        </h3>
+        <span class="entry__meta">2021 — Present · Bay Area, CA</span>
+      </div>
+      <ul>
+        <li>Own large portions of the analytics data platform on Snowflake, dbt, and Airflow 3; design and maintain the bronze → silver → gold modeling layers consumed by Growth, Ops, Finance, and Trust.</li>
+        <li>Authored 200+ dbt models and a shared library of macros &amp; tests that standardized incremental logic, surrogate keys, and SCD‑2 handling across teams.</li>
+        <li>Designed the canonical task‑lifecycle fact table — one row per task with all state transitions — eliminating recurring cross‑team disputes over the definition of a completed booking.</li>
+        <li>Migrated key DAGs to Airflow 3 with deferrable operators, idempotent retries, and explicit data contracts; cut overnight pipeline runtime by ~35%.</li>
+        <li>Run on‑call rotations; write the runbooks and the post‑mortems; mentor newer engineers on SQL style, testing discipline, and warehouse cost hygiene.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">
+          Data Analyst, Maps <span class="sep">·</span> <span class="org">Apple</span>
+        </h3>
+        <span class="entry__meta">2020 — 2021 · Cupertino, CA</span>
+      </div>
+      <ul>
+        <li>Supported Apple Maps data quality and evaluation workflows — wrote SQL and Python to surface ground‑truth discrepancies, routing anomalies, and POI coverage gaps across global regions.</li>
+        <li>Built reproducible analyses and dashboards that quantified the impact of map‑data releases on user‑facing metrics; partnered with engineering and operations teams to prioritize fixes.</li>
+        <li>Designed sampling and labeling pipelines for human‑in‑the‑loop review of map features, balancing statistical rigor with reviewer throughput.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">
+          Graduate Researcher <span class="sep">·</span> <span class="org">Columbia University</span>
+        </h3>
+        <span class="entry__meta">2018 — 2020 · New York, NY</span>
+      </div>
+      <ul>
+        <li>Coursework and project work in statistical machine learning, time series, nonparametric methods, and Bayesian inference.</li>
+        <li>Independent study: empirical and parametric bootstrap variance estimators for insurance claim counts, validated via Poisson simulation in R.</li>
+        <li>Capstone‑style analysis on the Framingham Heart Study using nonparametric survival methods.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =================== PROJECTS =================== -->
+  <section class="r">
+    <h2>Selected Projects</h2>
+
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Neural Style Transfer Web App <span class="sep">·</span> <span class="org">PyTorch · Flask · Docker</span></h3>
+        <span class="entry__meta">2019</span>
+      </div>
+      <ul><li>End‑to‑end Flask service exposing Gatys et al. style transfer; containerized for repeatable deployment. Practical introduction to GPU‑bound serving constraints.</li></ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">Whole‑Life Insurance Loss Simulation <span class="sep">·</span> <span class="org">Excel · VBA</span></h3>
+        <span class="entry__meta">2018</span>
+      </div>
+      <ul><li>Simulated the loss‑at‑issue distribution for a fully discrete whole‑life policy under Makeham mortality; reconciled with the MLC Illustrative Life Table.</li></ul>
+    </div>
+  </section>
+
+  <!-- =================== EDUCATION =================== -->
+  <section class="r edu">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">
+          M.A. Statistics <span class="sep">·</span> <span class="org">Columbia University</span>
+          <small>Advanced Data Analysis · Statistical Machine Learning · Time Series · Nonparametric Statistics · Statistical Inference. GPA 3.43.</small>
+        </h3>
+        <span class="entry__meta">2018 — 2020</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__head">
+        <h3 class="entry__title">
+          B.S. Applied Mathematics, Actuarial Emphasis <span class="sep">·</span> <span class="org">University of Wisconsin — Madison</span>
+          <small>Certificate in Business. Early SOA exam progress. Officer, actuarial student organization.</small>
+        </h3>
+        <span class="entry__meta">2014 — 2018</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== SKILLS =================== -->
+  <section class="r">
+    <h2>Stack</h2>
+    <div class="skills">
+      <div><span class="k">Warehouse</span> <span>Snowflake · PostgreSQL · MySQL</span></div>
+      <div><span class="k">Modeling</span>  <span>dbt Core &amp; Cloud · SQL · Jinja</span></div>
+      <div><span class="k">Orchestrate</span><span>Apache Airflow 3 · GitHub Actions</span></div>
+      <div><span class="k">Cloud</span>     <span>AWS (S3, Lambda, EC2, IAM) · Docker</span></div>
+      <div><span class="k">Languages</span> <span>Python · SQL · R · Bash</span></div>
+      <div><span class="k">BI</span>        <span>Looker · Tableau</span></div>
+      <div><span class="k">Stats</span>     <span>Regression · Bootstrap · Time series · Survival</span></div>
+      <div><span class="k">Practice</span>  <span>Data contracts · Testing · On‑call</span></div>
+      <div><span class="k">Spoken</span>    <span>Mandarin · English · basic Spanish</span></div>
+    </div>
+  </section>
+
+  <!-- =================== CERTS =================== -->
+  <section class="r">
+    <h2>Certifications</h2>
+    <ul class="certs">
+      <li>Astronomer — Airflow 3 DAG Authoring <small>· 2026</small></li>
+      <li>Astronomer — Airflow 3 Fundamentals <small>· 2026</small></li>
+      <li>AWS Certified Cloud Practitioner <small>· 2025</small></li>
+      <li>TestDome — SQL Certification <small>· 2020</small></li>
+      <li>LinkedIn — Advanced Python <small>· 2019</small></li>
+      <li>LinkedIn — Integrating Tableau &amp; R <small>· 2019</small></li>
+    </ul>
+  </section>
+
+</article>
+
+</body>
+</html>
