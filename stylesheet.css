@@ -251,6 +251,21 @@ img { display: block; max-width: 100%; height: auto; }
   font-style: normal;
   letter-spacing: .05em;
 }
+.about__facts {
+  list-style: none;
+  padding: 0;
+  margin: .75rem 0 0 0;
+}
+.about__facts li {
+  font-size: 1rem;
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--ink);
+  padding: .55rem 0;
+  border-top: 1px solid var(--rule);
+}
+.about__facts li:first-child { border-top: 0; padding-top: .25rem; }
+.about__facts strong { font-style: normal; }
 
 /* ----- Section scaffolding ----- */
 section { padding: clamp(4rem, 8vw, 7rem) var(--gutter); border-bottom: 1px solid var(--rule); }
