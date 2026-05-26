@@ -13,8 +13,8 @@ No build step, no framework, no trackers — just static files served by GitHub 
 ├── index.html              # The portfolio (single page, all sections)
 ├── resume.html             # Print-ready résumé — click "Print / Save PDF"
 ├── stylesheet.css          # All styles
-├── bootstrap-variance.pdf  # Columbia stats writeup linked from §02 / Card 03
-├── Caspar-CV.pdf           # Legacy CV (kept for backward links)
+├── bootstrap-variance.pdf       # Columbia stats writeup linked from §02 / Card 03
+├── Caspar_Chen_Resume_2026.pdf  # Current résumé PDF (linked from footer)
 ├── images/                 # Portrait + gallery photos
 │   ├── caspar-portrait.png
 │   └── gallery-*.jpg
