@@ -23,8 +23,7 @@ No build step, no framework, no analytics. Fonts are self-hosted.
 
 ## Design
 
-The page is a close: a before and an after, stated at the grain of the résumé.
-Bodoni Moda carries the name and the figures. IBM Plex Sans and IBM Plex Mono carry the record.
+The page leads with the skill vocabulary, and with how he uses AI: Ask Taskrabbit, Claude, dbt MCP, the semantic layer, and LLM guardrails. Bodoni Moda carries the name and the skill lines. IBM Plex Sans and IBM Plex Mono carry the record.
 
 Facts follow `Caspar_Chen_Resume_2026.pdf` as updated for 2026. The HTML résumé is the readable copy of that record.
 

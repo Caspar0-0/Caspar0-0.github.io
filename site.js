@@ -1,4 +1,5 @@
 (function () {
+  document.documentElement.classList.add("js");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var bar = document.querySelector(".progress");
@@ -14,14 +15,20 @@
     tick();
   }
 
-  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
-  var sections = links
-    .map(function (a) { return document.querySelector(a.getAttribute("href")); })
-    .filter(Boolean);
+  var fold = document.querySelector(".nav__fold");
+  if (fold) {
+    fold.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { fold.removeAttribute("open"); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") fold.removeAttribute("open");
+    });
+  }
+
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav__list a[href^='#']"));
   var spine = document.querySelector("[data-spine]");
   var labeled = Array.prototype.slice.call(document.querySelectorAll("[data-spine-label]"));
-
-  if ((sections.length || labeled.length) && "IntersectionObserver" in window) {
+  if (labeled.length && "IntersectionObserver" in window) {
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -65,6 +72,53 @@
     });
   }
 
+  function showPlate(item) {
+    var id = item.getAttribute("aria-controls");
+    if (!id) return;
+    var plate = document.getElementById(id);
+    if (!plate) return;
+    var parent = plate.parentElement;
+    Array.prototype.forEach.call(parent.children, function (el) {
+      var on = el === plate;
+      el.classList.toggle("is-on", on);
+      if (on && !reduce) {
+        el.classList.remove("is-in");
+        void el.offsetWidth;
+        el.classList.add("is-in");
+      }
+    });
+  }
+
+  function replayStrike(root) {
+    if (reduce || !root) return;
+    var s = root.querySelector("s");
+    if (!s) return;
+    s.classList.remove("is-drawn");
+    void s.offsetWidth;
+    s.classList.add("is-drawn");
+  }
+
+  if (!reduce) {
+    var cut = document.querySelector(".cut");
+    if (cut && "IntersectionObserver" in window) {
+      var cutWatch = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        cutWatch.disconnect();
+        replayStrike(cut);
+      }, { threshold: 0.45 });
+      cutWatch.observe(cut);
+    }
+    var strata = document.querySelector(".strata");
+    if (strata && "IntersectionObserver" in window) {
+      var layerWatch = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        layerWatch.disconnect();
+        strata.classList.add("is-grown");
+      }, { threshold: 0.4 });
+      layerWatch.observe(strata);
+    }
+  }
+
   var specName = document.querySelector("[data-spec-name]");
   var specCmp = document.querySelector("[data-spec-cmp]");
   bindRadios(document.querySelector("[data-metrics]"), function (item) {
@@ -74,35 +128,96 @@
     if (specCmp) specCmp.textContent = item.getAttribute("data-compare-value");
   });
 
+  ["[data-figures]", "[data-dial]", "[data-roles]"].forEach(function (sel) {
+    bindRadios(document.querySelector(sel), showPlate);
+  });
+  function drawSkill(item) {
+    showPlate(item);
+    if (reduce) return;
+    var plate = document.getElementById(item.getAttribute("aria-controls"));
+    if (!plate) return;
+    plate.classList.remove("is-drawn");
+    void plate.offsetWidth;
+    plate.classList.add("is-drawn");
+  }
+  bindRadios(document.querySelector("[data-skills]"), drawSkill);
+  if (!reduce) {
+    var openingSkill = document.querySelector("[data-skills] [aria-checked='true']");
+    if (openingSkill) drawSkill(openingSkill);
+  }
   bindRadios(document.querySelector("[data-stages]"));
 
-  var flow = document.querySelector(".flow");
+  var flowWrap = document.querySelector("[data-flow]");
   var traceBtn = document.querySelector("[data-trace]");
-  if (flow && traceBtn && !reduce) {
-    var steps = Array.prototype.slice.call(flow.querySelectorAll("li"));
+  if (flowWrap && traceBtn) {
+    var steps = Array.prototype.slice.call(flowWrap.querySelectorAll(".flow li"));
+    var bead = flowWrap.querySelector(".flow__bead");
     var playing = false;
-    function wait(ms) { return new Promise(function (resolve) { setTimeout(resolve, ms); }); }
+    var timer = null;
+
+    function moveBead(index) {
+      if (!bead || reduce) return;
+      var track = flowWrap.querySelector(".flow__track");
+      var li = steps[index];
+      var tr = track.getBoundingClientRect();
+      var lr = li.getBoundingClientRect();
+      var vertical = tr.height > tr.width + 8;
+      if (vertical) {
+        var y = lr.top + lr.height / 2 - tr.top - bead.offsetHeight / 2;
+        bead.style.transform = "translate3d(0," + Math.max(0, y) + "px,0)";
+      } else {
+        var x = lr.left + lr.width / 2 - tr.left - bead.offsetWidth / 2;
+        bead.style.transform = "translate3d(" + Math.max(0, x) + "px,0,0)";
+      }
+    }
+
+    function finishLit() {
+      steps.forEach(function (step) { step.classList.add("is-on"); });
+      if (bead) moveBead(steps.length - 1);
+    }
+
     function trace() {
-      if (playing) return Promise.resolve();
+      if (reduce) {
+        finishLit();
+        return;
+      }
+      if (playing) return;
       playing = true;
       traceBtn.disabled = true;
+      if (timer) clearTimeout(timer);
       steps.forEach(function (step) { step.classList.remove("is-on"); });
-      var chain = Promise.resolve();
-      steps.forEach(function (step) {
-        chain = chain.then(function () {
-          steps.forEach(function (s) { s.classList.remove("is-on"); });
-          step.classList.add("is-on");
-          return wait(420);
-        });
-      });
-      return chain.then(function () {
-        return wait(420);
-      }).then(function () {
-        steps.forEach(function (step) { step.classList.remove("is-on"); });
-        playing = false;
-        traceBtn.disabled = false;
-      });
+      var i = 0;
+      function next() {
+        steps.forEach(function (step, n) { step.classList.toggle("is-on", n <= i); });
+        moveBead(i);
+        i += 1;
+        if (i < steps.length) {
+          timer = setTimeout(next, 560);
+        } else {
+          timer = setTimeout(function () {
+            playing = false;
+            traceBtn.disabled = false;
+          }, 280);
+        }
+      }
+      next();
     }
+
     traceBtn.addEventListener("click", trace);
+    window.addEventListener("resize", function () {
+      var current = steps.filter(function (step) { return step.classList.contains("is-on"); });
+      if (current.length) moveBead(steps.indexOf(current[current.length - 1]));
+    });
+
+    if (!reduce && "IntersectionObserver" in window) {
+      var traced = false;
+      var watch = new IntersectionObserver(function (entries) {
+        if (traced || !entries[0].isIntersecting) return;
+        traced = true;
+        watch.disconnect();
+        trace();
+      }, { threshold: 0.55 });
+      watch.observe(flowWrap);
+    }
   }
 })();
