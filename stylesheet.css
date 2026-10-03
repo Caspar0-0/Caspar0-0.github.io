@@ -1469,7 +1469,7 @@ body.resume {
   font-family: var(--display);
   font-weight: 560;
   font-size: clamp(2.35rem, 7.4vw, 4.05rem);
-  line-height: 0.96;
+  line-height: 1.22;
   letter-spacing: -0.03em;
   text-wrap: balance;
   font-variation-settings: "opsz" 84, "wght" 580;
@@ -1521,7 +1521,7 @@ body.resume {
 
 @media (min-width: 860px) {
   .hero__top { align-items: end; }
-  .skillbox__stack span { font-size: clamp(3.15rem, 4.5vw, 4.8rem); }
+  .skillbox__stack span { font-size: clamp(2.85rem, 3.35vw, 3.45rem); }
   .skillbox__picks { max-width: 36rem; }
   .skillbox__lines { min-height: 18rem; }
 }
