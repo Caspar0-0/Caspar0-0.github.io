@@ -33,7 +33,7 @@
         <li><a href="resume.html">Résumé</a></li>
       </ul>
       <details class="nav__fold">
-        <summary>
+        <summary aria-controls="nav-panel">
           <span class="when-closed">Contents</span>
           <span class="when-open">Close</span>
         </summary>
@@ -69,7 +69,7 @@
 
         <div class="skillbox" id="index">
           <p class="skillbox__label" id="skills-label">Skills & certifications</p>
-          <div class="skillbox__lines" aria-live="polite">
+          <div class="skillbox__lines">
             <p id="skill-lang" class="skillbox__line">
               <span class="skillbox__k">Languages & engineering</span>
               <span class="skillbox__stack"><span>Python</span><span>SQL</span><span>Scala</span></span>
@@ -103,7 +103,7 @@
               <span class="skillbox__stack"><span>AWS Certified Cloud Practitioner</span><span>Dbt Certified Developer</span><span>Astronomer Certified DAG Authoring for Apache Airflow</span></span>
             </p>
           </div>
-          <div class="skillbox__picks" role="radiogroup" aria-labelledby="skills-label" data-skills>
+          <div class="skillbox__picks" role="radiogroup" aria-labelledby="skills-label" aria-orientation="horizontal" data-skills>
             <button type="button" role="radio" aria-checked="true" tabindex="0" aria-controls="skill-ai">AI</button>
             <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-lang">Languages</button>
             <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-platform">Platform</button>
@@ -113,6 +113,7 @@
             <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-bi">BI</button>
             <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-cert">Certificates</button>
           </div>
+          <p id="skill-status" class="sr" aria-live="polite" aria-atomic="true"></p>
         </div>
       </div>
 
@@ -138,7 +139,7 @@
 
       <div class="flow-wrap" data-flow>
         <div class="flow__track" aria-hidden="true"><i class="flow__bead"></i></div>
-        <ol class="flow">
+        <ol class="flow" id="question-path">
           <li>
             <span class="flow__n">01</span>
             <span class="flow__t">Question</span>
@@ -166,7 +167,8 @@
           </li>
         </ol>
       </div>
-      <button type="button" class="trace" data-trace>Trace a question</button>
+      <button type="button" class="trace" data-trace aria-controls="question-path">Trace a question</button>
+      <p id="trace-status" class="sr" aria-live="polite" aria-atomic="true"></p>
 
       <div class="contract">
         <div class="contract__picks">
@@ -240,66 +242,50 @@
   <section id="platform" data-spine-label="02 Platform">
     <div class="frame">
       <p class="kicker"><span>02</span> — Platform</p>
-      <h2>Three corrections.</h2>
-      <div class="figure">
-        <div class="choices figure__picks" role="radiogroup" aria-label="Platform corrections" data-figures>
-          <button type="button" role="radio" aria-checked="true" tabindex="0" aria-controls="fig-compute">Compute</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="fig-response">Response</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="fig-tables">Tables</button>
-        </div>
-        <div class="figure__plates">
-          <article id="fig-compute" class="figure__plate is-on">
-            <p class="figure__n">30%+</p>
-            <p class="stand">Snowflake compute, reduced 30%+ by query profiling, incremental modeling, partition pruning, clustering, and reusable SQL and Jinja.</p>
-          </article>
-          <article id="fig-response" class="figure__plate">
-            <p class="figure__n">40%</p>
-            <p class="stand">Mean incident response time, reduced 40%. Snowflake governance in Terraform: roles and grants, dynamic data masking, column tagging, automated tests, and quality alerting.</p>
-          </article>
-          <article id="fig-tables" class="figure__plate">
-            <p class="figure__n">160+</p>
-            <p class="stand">Production tables under schema contracts. Ingestion from Stripe, Fixer, Segment, Attom, S3, and internal microservices, through Fivetran and custom Python connectors.</p>
-          </article>
-        </div>
+      <h2>The warehouse behind the answer.</h2>
+      <p class="stand">A terabyte-scale Snowflake warehouse. Staging, intermediate, and marts, in dbt, for Finance, Marketing, Operations, and executive reporting. Ask Taskrabbit is held to the same names as the dashboards.</p>
+
+      <ol class="verse">
+        <li>
+          <p class="verse__n">30%+</p>
+          <p class="stand">Snowflake compute, reduced 30%+ by query profiling, incremental modeling, partition pruning, clustering, and reusable SQL and Jinja.</p>
+        </li>
+        <li>
+          <p class="verse__n">40%</p>
+          <p class="stand">Mean incident response time, reduced 40%. Snowflake governance in Terraform: roles and grants, dynamic data masking, column tagging, automated tests, and quality alerting.</p>
+        </li>
+        <li>
+          <p class="verse__n">160+</p>
+          <p class="stand">Production tables under schema contracts. Ingestion from Stripe, Fixer, Segment, Attom, S3, and internal microservices, through Fivetran and custom Python connectors.</p>
+        </li>
+      </ol>
+
+      <div class="release">
+        <h3 class="intact">Dev/Staging/Prod Releases</h3>
+        <p class="stand">Isolated dev, staging, and prod, with role-based access and a controlled promotion. Staging runs changed models and what depends on them in dbt Cloud CI, with <code>modified+</code> and <code>--fail-fast</code>, before promotion. Scheduled jobs release through Jenkins, Ansible, and cron.</p>
       </div>
 
-      <div class="promote-block">
-        <h3>Where a change is allowed to land.</h3>
-        <p class="stand">Isolated dev, staging, and prod. Role-based access. A controlled promotion.</p>
-        <div class="promote" role="radiogroup" aria-label="Release path" data-stages>
-          <button type="button" class="promote__b" role="radio" aria-checked="true" tabindex="0">
-            <span class="promote__w">Dev</span>
-            <span class="promote__s">The isolated first environment.</span>
-          </button>
-          <button type="button" class="promote__b" role="radio" aria-checked="false" tabindex="-1">
-            <span class="promote__w">Staging</span>
-            <span class="promote__s">dbt Cloud CI runs changed models and what depends on them, with <code>modified+</code> and <code>--fail-fast</code>, before promotion.</span>
-          </button>
-          <button type="button" class="promote__b" role="radio" aria-checked="false" tabindex="-1">
-            <span class="promote__w">Prod</span>
-            <span class="promote__s">Scheduled jobs release through Jenkins, Ansible, and cron.</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="dial">
-        <h3>Still on the platform.</h3>
-        <div class="choices dial__picks" role="radiogroup" aria-label="Other platform work" data-dial>
-          <button type="button" role="radio" aria-checked="true" tabindex="0" aria-controls="dial-warehouse">Warehouse</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="dial-airflow">Airflow</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="dial-streams">Streams</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="dial-stripe">Stripe</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="dial-backfill">Backfill</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="dial-standards">Standards</button>
-        </div>
-        <div class="dial__lines">
-          <p id="dial-warehouse" class="dial__line is-on"><span class="dial__lead">A terabyte-scale Snowflake warehouse.</span> Staging, intermediate, and marts, in dbt, for Finance, Marketing, Operations, and executive reporting.</p>
-          <p id="dial-airflow" class="dial__line"><span class="dial__lead">Airflow on Astronomer.</span> Dynamic task mapping, cross-DAG dependencies, resilient retries, and daily runs over millions of marketplace events.</p>
-          <p id="dial-streams" class="dial__line"><span class="dial__lead">Snowflake Streams and Tasks.</span> After an outage: suspended tasks and stale streams found, missed windows rebuilt in SQL from the task logic, data backfilled, dependencies restarted, freshness and completeness checked.</p>
-          <p id="dial-stripe" class="dial__line"><span class="dial__lead">Stripe-to-CSI reconciliation</span> in Snowflake and Python. Charges, transfers, refunds, and platform earnings, modeled to catch anomalies.</p>
-          <p id="dial-backfill" class="dial__line"><span class="dial__lead">Historical backfills</span> when Snowflake objects were replaced. Legacy data reconciled in. Row counts, downstream outputs, and business metrics checked before cutover.</p>
-          <p id="dial-standards" class="dial__line"><span class="dial__lead">Standards across 5+ data repositories.</span> Code review, SQLFluff gates, and test-driven Jira spikes, so assumptions and failure modes were checked before production.</p>
-        </div>
+      <div class="practice">
+        <article>
+          <h3>Airflow on Astronomer.</h3>
+          <p class="stand">Dynamic task mapping, cross-DAG dependencies, resilient retries, and daily runs over millions of marketplace events.</p>
+        </article>
+        <article>
+          <h3>Snowflake Streams and Tasks.</h3>
+          <p class="stand">After an outage: suspended tasks and stale streams found, missed windows rebuilt in SQL from the task logic, data backfilled, dependencies restarted, freshness and completeness checked.</p>
+        </article>
+        <article>
+          <h3>Stripe-to-CSI reconciliation</h3>
+          <p class="stand">In Snowflake and Python. Charges, transfers, refunds, and platform earnings, modeled to catch anomalies.</p>
+        </article>
+        <article>
+          <h3>Historical backfills</h3>
+          <p class="stand">when Snowflake objects were replaced. Legacy data reconciled in. Row counts, downstream outputs, and business metrics checked before cutover.</p>
+        </article>
+        <article>
+          <h3>Standards across 5+ data repositories.</h3>
+          <p class="stand">Code review, SQLFluff gates, and test-driven Jira spikes, so assumptions and failure modes were checked before production.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -308,42 +294,33 @@
     <div class="frame">
       <p class="kicker"><span>03</span> — Record</p>
       <h2>Where, and when.</h2>
-      <div class="roles">
-        <div class="choices roles__picks" role="radiogroup" aria-label="Roles and degrees" data-roles>
-          <button type="button" role="radio" aria-checked="true" tabindex="0" aria-controls="role-de2">2022</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="role-de1">2021</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="role-apple">2020</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="role-columbia">2018</button>
-          <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="role-uw">2014</button>
-        </div>
-        <div class="roles__plates">
-          <article id="role-de2" class="roles__plate is-on">
-            <p class="roles__when"><time datetime="2022-11">Nov 2022</time> – Present</p>
-            <h3>Data Engineer II</h3>
-            <p class="stand">Taskrabbit, Inc. · San Francisco, CA. Marketplace platform — IKEA Group. Terabyte-scale Snowflake warehouse.</p>
-          </article>
-          <article id="role-de1" class="roles__plate">
-            <p class="roles__when"><time datetime="2021-09">Sep 2021</time> – <time datetime="2022-10">Oct 2022</time></p>
-            <h3>Data Engineer I</h3>
-            <p class="stand">Taskrabbit, Inc. · San Francisco, CA.</p>
-          </article>
-          <article id="role-apple" class="roles__plate">
-            <p class="roles__when"><time datetime="2020-12">Dec 2020</time> – <time datetime="2021-09">Sep 2021</time></p>
-            <h3>Data Analyst Lead</h3>
-            <p class="stand">Apple (via Apex Systems) · Sunnyvale, CA.</p>
-          </article>
-          <article id="role-columbia" class="roles__plate">
-            <p class="roles__when"><time datetime="2018-09">Sep 2018</time> – <time datetime="2019-12">Dec 2019</time></p>
-            <h3>M.A. in Statistics</h3>
-            <p class="stand">Columbia University · New York, NY. Coursework: Data Mining, Databases, Data Science, Time Series Analysis, Nonparametric Methods.</p>
-          </article>
-          <article id="role-uw" class="roles__plate">
-            <p class="roles__when"><time datetime="2014-09">Sep 2014</time> – <time datetime="2018-05">May 2018</time></p>
-            <h3>B.S. Applied Mathematics, Actuarial Science</h3>
-            <p class="stand">University of Wisconsin–Madison.</p>
-          </article>
-        </div>
-      </div>
+      <ol class="record">
+        <li>
+          <p class="record__when"><time datetime="2022-11">Nov 2022</time> – Present</p>
+          <h3>Data Engineer II</h3>
+          <p class="stand">Taskrabbit, Inc. · San Francisco, CA. Marketplace platform — IKEA Group. Terabyte-scale Snowflake warehouse.</p>
+        </li>
+        <li>
+          <p class="record__when"><time datetime="2021-09">Sep 2021</time> – <time datetime="2022-10">Oct 2022</time></p>
+          <h3>Data Engineer I</h3>
+          <p class="stand">Taskrabbit, Inc. · San Francisco, CA.</p>
+        </li>
+        <li>
+          <p class="record__when"><time datetime="2020-12">Dec 2020</time> – <time datetime="2021-09">Sep 2021</time></p>
+          <h3>Data Analyst Lead</h3>
+          <p class="stand">Apple (via Apex Systems) · Sunnyvale, CA.</p>
+        </li>
+        <li>
+          <p class="record__when"><time datetime="2018-09">Sep 2018</time> – <time datetime="2019-12">Dec 2019</time></p>
+          <h3>M.A. in Statistics</h3>
+          <p class="stand">Columbia University · New York, NY. Coursework: Data Mining, Databases, Data Science, Time Series Analysis, Nonparametric Methods.</p>
+        </li>
+        <li>
+          <p class="record__when"><time datetime="2014-09">Sep 2014</time> – <time datetime="2018-05">May 2018</time></p>
+          <h3>B.S. Applied Mathematics, Actuarial Science</h3>
+          <p class="stand">University of Wisconsin–Madison.</p>
+        </li>
+      </ol>
     </div>
   </section>
 

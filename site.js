@@ -16,12 +16,22 @@
   }
 
   var fold = document.querySelector(".nav__fold");
+  var mainEl = document.querySelector("main");
+  var footEl = document.querySelector("footer");
   if (fold) {
+    var summary = fold.querySelector("summary");
+    function setFold(open) {
+      if (mainEl) mainEl.inert = open;
+      if (footEl) footEl.inert = open;
+    }
+    fold.addEventListener("toggle", function () { setFold(fold.open); });
     fold.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () { fold.removeAttribute("open"); });
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") fold.removeAttribute("open");
+      if (e.key !== "Escape" || !fold.open) return;
+      fold.removeAttribute("open");
+      if (summary) summary.focus();
     });
   }
 
@@ -64,6 +74,8 @@
         var n = null;
         if (e.key === "ArrowRight" || e.key === "ArrowDown") n = (i + 1) % items.length;
         if (e.key === "ArrowLeft" || e.key === "ArrowUp") n = (i - 1 + items.length) % items.length;
+        if (e.key === "Home") n = 0;
+        if (e.key === "End") n = items.length - 1;
         if (n === null) return;
         e.preventDefault();
         items[n].focus();
@@ -128,32 +140,104 @@
     if (specCmp) specCmp.textContent = item.getAttribute("data-compare-value");
   });
 
-  ["[data-figures]", "[data-dial]", "[data-roles]"].forEach(function (sel) {
-    bindRadios(document.querySelector(sel), showPlate);
-  });
+  function fitEl(el) {
+    if (!el || el.getClientRects().length === 0) return;
+    el.style.fontSize = "";
+    var size = parseFloat(getComputedStyle(el).fontSize);
+    var guard = 0;
+    while (el.scrollWidth > el.clientWidth + 1 && size > 13 && guard < 28) {
+      size = Math.max(13, size * 0.94);
+      el.style.fontSize = size + "px";
+      guard += 1;
+    }
+  }
+
+  function fitPlate(plate) {
+    if (!plate) return;
+    var spans = plate.querySelectorAll(".skillbox__stack span");
+    if (!spans.length) return;
+    var box = document.querySelector(".skillbox");
+    var long = false;
+    Array.prototype.forEach.call(spans, function (el) {
+      if (el.textContent.length > 22) long = true;
+    });
+    if (box) box.classList.toggle("is-wide", long && window.matchMedia("(min-width: 860px)").matches);
+    Array.prototype.forEach.call(spans, function (el) { el.style.fontSize = ""; });
+    var size = parseFloat(getComputedStyle(spans[0]).fontSize);
+    var guard = 0;
+    function overflows() {
+      for (var i = 0; i < spans.length; i++) {
+        if (spans[i].scrollWidth > spans[i].clientWidth + 1) return true;
+      }
+      return false;
+    }
+    while (overflows() && size > 13 && guard < 28) {
+      size = Math.max(13, size * 0.94);
+      Array.prototype.forEach.call(spans, function (el) { el.style.fontSize = size + "px"; });
+      guard += 1;
+    }
+  }
+
+  function fitIntact() {
+    document.querySelectorAll(".intact").forEach(fitEl);
+    fitPlate(document.querySelector(".skillbox__line.is-on"));
+  }
+
+  var skillStatus = document.getElementById("skill-status");
+  var skillAnnounced = false;
   function drawSkill(item) {
     showPlate(item);
-    if (reduce) return;
     var plate = document.getElementById(item.getAttribute("aria-controls"));
-    if (!plate) return;
+    if (plate) {
+      void plate.offsetWidth;
+      fitPlate(plate);
+      if (skillStatus && skillAnnounced) {
+        var kicker = plate.querySelector(".skillbox__k");
+        var words = Array.prototype.map.call(plate.querySelectorAll(".skillbox__stack span"), function (el) {
+          return el.textContent;
+        });
+        skillStatus.textContent = (kicker ? kicker.textContent + ". " : "") + words.join(", ");
+      }
+    }
+    skillAnnounced = true;
+    if (reduce || !plate) return;
     plate.classList.remove("is-drawn");
     void plate.offsetWidth;
     plate.classList.add("is-drawn");
   }
   bindRadios(document.querySelector("[data-skills]"), drawSkill);
-  if (!reduce) {
-    var openingSkill = document.querySelector("[data-skills] [aria-checked='true']");
-    if (openingSkill) drawSkill(openingSkill);
-  }
-  bindRadios(document.querySelector("[data-stages]"));
+  var openingSkill = document.querySelector("[data-skills] [aria-checked='true']");
+  if (openingSkill) drawSkill(openingSkill);
+  fitIntact();
+  window.addEventListener("resize", fitIntact);
 
   var flowWrap = document.querySelector("[data-flow]");
   var traceBtn = document.querySelector("[data-trace]");
   if (flowWrap && traceBtn) {
     var steps = Array.prototype.slice.call(flowWrap.querySelectorAll(".flow li"));
     var bead = flowWrap.querySelector(".flow__bead");
+    var traceStatus = document.getElementById("trace-status");
     var playing = false;
     var timer = null;
+
+    function announce(index, doneAll) {
+      if (!traceStatus) return;
+      if (doneAll) {
+        traceStatus.textContent = "Question, Claude, dbt, Snowflake, Answer.";
+        return;
+      }
+      var name = steps[index].querySelector(".flow__t").textContent;
+      traceStatus.textContent = name + ", step " + (index + 1) + " of " + steps.length + ".";
+    }
+
+    function markStep(index) {
+      steps.forEach(function (step, n) {
+        step.classList.toggle("is-on", n <= index);
+        if (n === index) step.setAttribute("aria-current", "step");
+        else step.removeAttribute("aria-current");
+      });
+      announce(index, false);
+    }
 
     function moveBead(index) {
       if (!bead || reduce) return;
@@ -172,7 +256,12 @@
     }
 
     function finishLit() {
-      steps.forEach(function (step) { step.classList.add("is-on"); });
+      steps.forEach(function (step, n) {
+        step.classList.add("is-on");
+        if (n === steps.length - 1) step.setAttribute("aria-current", "step");
+        else step.removeAttribute("aria-current");
+      });
+      announce(steps.length - 1, true);
       if (bead) moveBead(steps.length - 1);
     }
 
@@ -185,10 +274,13 @@
       playing = true;
       traceBtn.disabled = true;
       if (timer) clearTimeout(timer);
-      steps.forEach(function (step) { step.classList.remove("is-on"); });
+      steps.forEach(function (step) {
+        step.classList.remove("is-on");
+        step.removeAttribute("aria-current");
+      });
       var i = 0;
       function next() {
-        steps.forEach(function (step, n) { step.classList.toggle("is-on", n <= i); });
+        markStep(i);
         moveBead(i);
         i += 1;
         if (i < steps.length) {
