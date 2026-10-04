@@ -3,387 +3,356 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Junjie (Caspar) Chen — Data Engineer</title>
-<meta name="description" content="Portfolio of Junjie 'Caspar' Chen — Data Engineer at Taskrabbit. Pipelines, analytics, and applied statistics." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:ital,wght@0,300..700;1,400&display=swap" rel="stylesheet">
+<title>Caspar Chen — Data Engineer</title>
+<meta name="description" content="Caspar Chen is a Data Engineer II at Taskrabbit. Terabyte-scale Snowflake, dbt, and Ask Taskrabbit, a Claude text-to-SQL product held to the semantic layer." />
+<meta name="theme-color" content="#e7dfd0" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preload" href="fonts/bodoni-moda-roman.woff2" as="font" type="font/woff2" crossorigin />
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="fonts.css" />
 <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<p class="spine" data-spine aria-hidden="true">00 Cover</p>
 
-<div class="grain" aria-hidden="true"></div>
-
-<header class="ticker" role="banner">
-  <div class="ticker__inner">
-    <span class="mono">№ 001</span>
-    <span class="mono dim">Portfolio · Vol. VII</span>
-    <span class="mono dim">Updated · MMXXVI</span>
-    <span class="mono dim">37.5485° N / 121.9886° W</span>
-    <span class="mono dim">陈浚杰 · Fremont, CA</span>
+<header class="nav">
+  <div class="frame nav__in">
+    <a class="brand" href="#top">
+      <span class="brand__name">Caspar Chen</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__list">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#record">Record</a></li>
+        <li><a href="#index">Index</a></li>
+        <li><a href="#contact">Reach</a></li>
+        <li><a href="resume.html">Résumé</a></li>
+      </ul>
+      <details class="nav__fold">
+        <summary aria-controls="nav-panel">
+          <span class="when-closed">Contents</span>
+          <span class="when-open">Close</span>
+        </summary>
+        <div class="nav__panel" id="nav-panel">
+          <p class="kicker">Contents</p>
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#record">Record</a></li>
+            <li><a href="#index">Index</a></li>
+            <li><a href="#contact">Reach</a></li>
+            <li><a href="resume.html">Résumé</a></li>
+          </ul>
+        </div>
+      </details>
+    </nav>
   </div>
 </header>
 
-<nav class="nav" aria-label="Primary">
-  <a href="#top" class="nav__brand">
-    <span class="serif italic">C</span><span class="mono">/jc</span>
-  </a>
-  <ul class="nav__list">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#stack">Stack</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="resume.html">Résumé <sup class="mono">↗</sup></a></li>
-  </ul>
-</nav>
+<main id="top" tabindex="-1">
 
-<main id="top">
+  <section class="hero" data-spine-label="00 Cover" aria-labelledby="name">
+    <div class="frame">
+      <div class="hero__top">
+        <div>
+          <p class="kicker">Data Engineer II · Taskrabbit</p>
+          <h1 id="name">
+            <span class="line">Caspar</span>
+            <span class="line">Chen</span>
+          </h1>
+        </div>
 
-  <!-- ============== MASTHEAD ============== -->
-  <section class="masthead">
-    <div class="masthead__inner">
-      <div class="masthead__left">
-        <p class="legal mono">陈浚杰 · b. Junjie, goes by</p>
-        <h1 class="hero-name">
-          <span class="hero-name__first">Caspar</span>
-          <span class="hero-name__last">Chen<span class="dot">.</span></span>
-        </h1>
-
-        <ul class="istate">
-          <li>I am a <mark>data engineer</mark> at <mark>Taskrabbit</mark>.</li>
-          <li>I grew up in China and now live in <mark>Fremont, CA</mark>.</li>
-          <li>I studied <mark>applied math</mark> at UW–Madison and <mark>statistics</mark> at Columbia.</li>
-          <li>I spent 2020–2021 working on <mark>Apple Maps</mark> data quality.</li>
-          <li>I write a lot of <mark>SQL</mark>, plenty of <mark>Python</mark>, and the occasional <mark>R</mark> notebook.</li>
-          <li>I'm fluent in <mark>Snowflake</mark>, <mark>dbt</mark>, and <mark>Airflow 3</mark>.</li>
-          <li>I think the best dashboards are the ones nobody has to defend.</li>
-          <li>I shoot 35mm in my spare time — some of it lives in the <a href="#gallery">gallery</a>.</li>
-          <li>I have a <a href="resume.html">résumé</a> if you want the formal version.</li>
-        </ul>
-
-        <a href="#work" class="scroll-cue mono" aria-label="Scroll down">↓ Continue reading</a>
+        <div class="skillbox" id="index">
+          <p class="skillbox__label" id="skills-label">Skills & certifications</p>
+          <div class="skillbox__lines">
+            <p id="skill-lang" class="skillbox__line">
+              <span class="skillbox__k">Languages & engineering</span>
+              <span class="skillbox__stack"><span>Python</span><span>SQL</span><span>Scala</span></span>
+            </p>
+            <p id="skill-platform" class="skillbox__line">
+              <span class="skillbox__k">Data platform</span>
+              <span class="skillbox__stack"><span>Snowflake</span><span>dbt</span><span>Airflow (Astronomer)</span><span>Fivetran</span><span>Segment</span><span>Kafka</span></span>
+            </p>
+            <p id="skill-cloud" class="skillbox__line">
+              <span class="skillbox__k">Cloud & infrastructure</span>
+              <span class="skillbox__stack"><span>AWS</span><span>S3</span><span>Terraform</span></span>
+            </p>
+            <p id="skill-cicd" class="skillbox__line">
+              <span class="skillbox__k">CI/CD & engineering</span>
+              <span class="skillbox__stack"><span>dbt Cloud CI</span><span>Jenkins</span><span>Ansible</span><span>GitHub</span><span>TDD</span><span>Dev/Staging/Prod Releases</span></span>
+            </p>
+            <p id="skill-model" class="skillbox__line">
+              <span class="skillbox__k">Data modeling & reliability</span>
+              <span class="skillbox__stack"><span>Dimensional Modeling</span><span>Star Schema</span><span>ELT</span><span>Data Quality</span><span>Data Observability</span><span>RBAC</span></span>
+            </p>
+            <p id="skill-bi" class="skillbox__line">
+              <span class="skillbox__k">BI & analytics</span>
+              <span class="skillbox__stack"><span>Sigma</span><span>Looker</span><span>Tableau</span><span>Mixpanel</span></span>
+            </p>
+            <p id="skill-ai" class="skillbox__line is-on">
+              <span class="skillbox__k">AI & semantic layer</span>
+              <span class="skillbox__stack"><span>Claude</span><span>dbt MCP</span><span>Text-to-SQL</span><span>dbt Semantic Layer</span><span>LLM Guardrails</span></span>
+            </p>
+            <p id="skill-cert" class="skillbox__line">
+              <span class="skillbox__k">Certifications</span>
+              <span class="skillbox__stack"><span>AWS Certified Cloud Practitioner</span><span>Dbt Certified Developer</span><span>Astronomer Certified DAG Authoring for Apache Airflow</span></span>
+            </p>
+          </div>
+          <div class="skillbox__picks" role="radiogroup" aria-labelledby="skills-label" aria-orientation="horizontal" data-skills>
+            <button type="button" role="radio" aria-checked="true" tabindex="0" aria-controls="skill-ai">AI</button>
+            <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-lang">Languages</button>
+            <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-platform">Platform</button>
+            <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-cloud">Cloud</button>
+            <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-cicd">CI/CD</button>
+            <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-model">Modeling</button>
+            <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-bi">BI</button>
+            <button type="button" role="radio" aria-checked="false" tabindex="-1" aria-controls="skill-cert">Certificates</button>
+          </div>
+          <p id="skill-status" class="sr" aria-live="polite" aria-atomic="true"></p>
+        </div>
       </div>
 
-      <figure class="masthead__portrait">
-        <img src="images/caspar-portrait.png" alt="Portrait of Caspar Chen" />
-        <figcaption class="mono dim">Portrait · Fremont, MMXXVI</figcaption>
-      </figure>
+      <div class="hero__lower">
+        <p class="lede">He architected Ask Taskrabbit, a company-wide Claude text-to-SQL product: a question in natural language comes back at an approved grain, on the same definitions as the dashboards. He also architects a terabyte-scale Snowflake warehouse for a marketplace platform in the IKEA Group.</p>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Data Engineer II</dd></div>
+          <div><dt>Employer</dt><dd>Taskrabbit, Inc.</dd></div>
+          <div><dt>Workplace</dt><dd>San Francisco, CA</dd></div>
+          <div><dt>Platform</dt><dd>Marketplace — IKEA Group</dd></div>
+          <div><dt>Résumé</dt><dd><a href="resume.html">The formal record</a></dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
-  <!-- ============== ABOUT ============== -->
-  <section class="about" id="about">
-    <div class="rule"><span class="mono dim">§ 01 — About</span></div>
-    <div class="about__grid">
-      <aside class="about__side">
-        <div class="about__pull">
-          <span class="mono dim">Fun facts</span>
-          <ul class="about__facts">
-            <li>My applied math degree was an <strong>actuarial science</strong> emphasis. I passed <strong>three SOA exams</strong> during undergrad.</li>
-            <li>Earned <strong>straight A&rsquo;s</strong> (A&minus; and above) across my UW–Madison coursework.</li>
-            <li>Still read actuarial textbooks for fun. I know how that sounds.</li>
+  <section id="work" data-spine-label="01 Work">
+    <div class="frame">
+      <p class="kicker"><span>01</span> — Work</p>
+      <h2>The question has a contract.</h2>
+      <p class="stand">Ask Taskrabbit is company-wide text-to-SQL. A question in natural language comes back at an approved grain, aligned with the dashboard.</p>
+
+      <div class="flow-wrap" data-flow>
+        <div class="flow__track" aria-hidden="true"><i class="flow__bead"></i></div>
+        <ol class="flow" id="question-path">
+          <li>
+            <span class="flow__n">01</span>
+            <span class="flow__t">Question</span>
+            <span class="flow__d">Natural language, governed metrics</span>
+          </li>
+          <li>
+            <span class="flow__n">02</span>
+            <span class="flow__t">Claude</span>
+            <span class="flow__d">Text-to-SQL</span>
+          </li>
+          <li>
+            <span class="flow__n">03</span>
+            <span class="flow__t">dbt</span>
+            <span class="flow__d">MCP, semantic layer, guardrails</span>
+          </li>
+          <li>
+            <span class="flow__n">04</span>
+            <span class="flow__t">Snowflake</span>
+            <span class="flow__d">Least-privilege service role</span>
+          </li>
+          <li>
+            <span class="flow__n">05</span>
+            <span class="flow__t">Answer</span>
+            <span class="flow__d">Dashboard-aligned grain</span>
+          </li>
+        </ol>
+      </div>
+      <button type="button" class="trace" data-trace aria-controls="question-path">Trace a question</button>
+      <p id="trace-status" class="sr" aria-live="polite" aria-atomic="true"></p>
+
+      <div class="contract">
+        <div class="contract__picks">
+          <div>
+            <p class="spec__label" id="metric-label">Metric</p>
+            <div class="choices" role="radiogroup" aria-labelledby="metric-label" data-metrics>
+              <button type="button" role="radio" data-metric="IBR" aria-checked="false" tabindex="-1">IBR</button>
+              <button type="button" role="radio" data-metric="AOV" aria-checked="false" tabindex="-1">AOV</button>
+              <button type="button" role="radio" data-metric="Take Rate" aria-checked="true" tabindex="0">Take Rate</button>
+              <button type="button" role="radio" data-metric="QFR" aria-checked="false" tabindex="-1">QFR</button>
+            </div>
+          </div>
+          <div>
+            <p class="spec__label" id="compare-label">Comparison</p>
+            <div class="choices" role="radiogroup" aria-labelledby="compare-label" data-compare>
+              <button type="button" role="radio" data-compare-value="LY" aria-checked="true" tabindex="0">LY</button>
+              <button type="button" role="radio" data-compare-value="WoW" aria-checked="false" tabindex="-1">WoW</button>
+            </div>
+          </div>
+        </div>
+        <p class="askline" aria-live="polite">
+          <span class="askline__k">Form</span>
+          <span class="askline__token" data-spec-name>Take Rate</span>
+          <span class="askline__dot" aria-hidden="true">·</span>
+          <span class="askline__token" data-spec-cmp>LY</span>
+          <span class="askline__dot" aria-hidden="true">·</span>
+          <span>approved grain</span>
+        </p>
+        <p class="stand stand--after">Claude reaches dbt through MCP and Snowflake through a least-privilege role, limited to approved databases and schemas. The semantic layer and the LLM guardrails hold the SQL to the same names, grains, dimensions, and LY/WoW logic as the dashboards. IBR, AOV, Take Rate, and QFR are aggregation-safe ratios. Their formulas stay in the semantic layer.</p>
+      </div>
+
+      <article class="cut">
+        <p class="kicker">Data Engineer I · Sep 2021 – Oct 2022</p>
+        <h3>Eight hours, then under thirty.</h3>
+        <p class="cut__from"><s>8 hours</s></p>
+        <p class="cut__to"><span class="cut__under">under</span> <span class="num">30</span> <span class="cut__unit">minutes</span></p>
+        <p class="stand">Legacy models moved to Fivetran, dbt, Snowflake, and Looker. ETL runtime fell from 8 hours to under 30 minutes. Downstream data quality held.</p>
+        <p class="stand">On that same watch he triaged urgent pipeline failures, restored availability, and kept the SLA. dbt models and Airflow DAGs carried marketing attribution and operations KPIs.</p>
+      </article>
+
+      <article class="dolly">
+        <p class="kicker">Dolly acquisition · greenfield</p>
+        <h3>Dolly, greenfield.</h3>
+        <ol class="strata" aria-label="dbt layers for the Dolly warehouse, foundation at the bottom">
+          <li style="--w: 72%"><span class="strata__name">Marts</span><span class="strata__k">03</span></li>
+          <li style="--w: 86%"><span class="strata__name">Intermediate</span><span class="strata__k">02</span></li>
+          <li style="--w: 100%"><span class="strata__name">Staging</span><span class="strata__k">01</span></li>
+        </ol>
+        <p class="stand">A new dbt repository, a transformation architecture, and staging, intermediate, and mart layers, so acquired data could enter Taskrabbit’s unified warehouse.</p>
+      </article>
+
+      <article class="countries">
+        <p class="countries__n">8</p>
+        <div>
+          <p class="kicker">Apple, via Apex Systems · Sunnyvale</p>
+          <h3>OpenStreetMap, eight countries.</h3>
+          <p class="when">Dec 2020 – Sep 2021 · Data Analyst Lead</p>
+          <p class="stand">Geospatial pipelines in SQL, Scala, QGIS, PostgreSQL, and Hive/Hadoop, into Apple Maps. Validation and remediation for OpenStreetMap across 8 countries, so inconsistencies were resolved before downstream use.</p>
+          <ul class="tools" aria-label="Tools">
+            <li>SQL</li>
+            <li>Scala</li>
+            <li>QGIS</li>
+            <li>PostgreSQL</li>
+            <li>Hive/Hadoop</li>
           </ul>
         </div>
-      </aside>
+      </article>
+    </div>
+  </section>
 
-      <div class="about__body">
-        <p class="kicker mono">A quiet manifesto, more or less.</p>
-        <p>
-          I'm a data engineer with a statistician's nervous system. I trained as an applied
-          mathematician at <strong>Wisconsin–Madison</strong>, then took the M.A. in
-          Statistics at <strong>Columbia</strong>, then promptly discovered that
-          most of the interesting problems live downstream of the model — in the joins,
-          the late-arriving rows, the half-truths in a marketing event spec.
-        </p>
-        <p>
-          Today I work on Taskrabbit's data platform. That means designing dbt models
-          that hold up under real traffic, scheduling Airflow DAGs that fail loudly
-          instead of silently, and writing the kind of SQL that the next engineer
-          actually wants to read.
-        </p>
-        <p>
-          Off the clock: long-exposure photography, the occasional R notebook, and
-          a stubborn habit of reading actuarial textbooks for fun.
-        </p>
+  <section id="platform" data-spine-label="02 Platform">
+    <div class="frame">
+      <p class="kicker"><span>02</span> — Platform</p>
+      <h2>The warehouse behind the answer.</h2>
+      <p class="stand">A terabyte-scale Snowflake warehouse. Staging, intermediate, and marts, in dbt, for Finance, Marketing, Operations, and executive reporting. Ask Taskrabbit is held to the same names as the dashboards.</p>
 
-        <ul class="about__list">
-          <li><span class="mono dim">Based</span> Fremont, California</li>
-          <li><span class="mono dim">Role</span> Data Engineer · Taskrabbit</li>
-          <li><span class="mono dim">Speaks</span> 中文 · English · un poco de Español</li>
-          <li><span class="mono dim">Reach</span> <a class="ink" href="mailto:jchen@taskrabbit.com">jchen@taskrabbit.com</a></li>
-        </ul>
+      <ol class="verse">
+        <li>
+          <p class="verse__n">30%+</p>
+          <p class="stand">Snowflake compute, reduced 30%+ by query profiling, incremental modeling, partition pruning, clustering, and reusable SQL and Jinja.</p>
+        </li>
+        <li>
+          <p class="verse__n">40%</p>
+          <p class="stand">Mean incident response time, reduced 40%. Snowflake governance in Terraform: roles and grants, dynamic data masking, column tagging, automated tests, and quality alerting.</p>
+        </li>
+        <li>
+          <p class="verse__n">160+</p>
+          <p class="stand">Production tables under schema contracts. Ingestion from Stripe, Fixer, Segment, Attom, S3, and internal microservices, through Fivetran and custom Python connectors.</p>
+        </li>
+      </ol>
+
+      <div class="release">
+        <h3 class="intact">Dev/Staging/Prod Releases</h3>
+        <p class="stand">Isolated dev, staging, and prod, with role-based access and a controlled promotion. Staging runs changed models and what depends on them in dbt Cloud CI, with <code>modified+</code> and <code>--fail-fast</code>, before promotion. Scheduled jobs release through Jenkins, Ansible, and cron.</p>
+      </div>
+
+      <div class="practice">
+        <article>
+          <h3>Airflow on Astronomer.</h3>
+          <p class="stand">Dynamic task mapping, cross-DAG dependencies, resilient retries, and daily runs over millions of marketplace events.</p>
+        </article>
+        <article>
+          <h3>Snowflake Streams and Tasks.</h3>
+          <p class="stand">After an outage: suspended tasks and stale streams found, missed windows rebuilt in SQL from the task logic, data backfilled, dependencies restarted, freshness and completeness checked.</p>
+        </article>
+        <article>
+          <h3>Stripe-to-CSI reconciliation</h3>
+          <p class="stand">In Snowflake and Python. Charges, transfers, refunds, and platform earnings, modeled to catch anomalies.</p>
+        </article>
+        <article>
+          <h3>Historical backfills</h3>
+          <p class="stand">When Snowflake objects were replaced. Legacy data reconciled in. Row counts, downstream outputs, and business metrics checked before cutover.</p>
+        </article>
+        <article>
+          <h3>Standards across 5+ data repositories.</h3>
+          <p class="stand">Code review, SQLFluff gates, and test-driven Jira spikes, so assumptions and failure modes were checked before production.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============== SELECTED WORK ============== -->
-  <section class="work" id="work">
-    <div class="rule"><span class="mono dim">§ 02 — Selected work</span></div>
-
-    <h2 class="section-title display">
-      Things I&rsquo;ve <em>built</em>, broken, <br/>or quietly improved.
-    </h2>
-
-    <ol class="cards">
-      <li class="card">
-        <header class="card__head">
-          <span class="card__idx mono">01 / 05</span>
-          <span class="card__tag mono">Pipelines</span>
-        </header>
-        <h3 class="card__title serif">Event Lakehouse, end&#8209;to&#8209;end.</h3>
-        <p class="card__body">
-          Built and maintain the bronze→silver→gold layer of Taskrabbit's analytics warehouse:
-          Snowflake, dbt, and Airflow 3, with contracts and tests so downstream dashboards
-          don't quietly lie. Authored over 200 dbt models and the macros that keep them DRY.
-        </p>
-        <ul class="card__stack mono">
-          <li>Snowflake</li><li>dbt</li><li>Airflow 3</li><li>Python</li>
-        </ul>
-      </li>
-
-      <li class="card">
-        <header class="card__head">
-          <span class="card__idx mono">02 / 05</span>
-          <span class="card__tag mono">Modeling</span>
-        </header>
-        <h3 class="card__title serif">Marketplace economics, demystified.</h3>
-        <p class="card__body">
-          Designed the canonical "task lifecycle" fact table — one row, one task, every state
-          transition — so growth, ops, and finance finally agree on what a completed booking is.
-          Saved roughly a meeting a week, which is the real ROI.
-        </p>
-        <ul class="card__stack mono">
-          <li>SQL</li><li>dbt</li><li>Looker</li>
-        </ul>
-      </li>
-
-      <li class="card">
-        <header class="card__head">
-          <span class="card__idx mono">03 / 05</span>
-          <span class="card__tag mono">Statistics</span>
-        </header>
-        <h3 class="card__title serif">Bootstrap variance estimators in R.</h3>
-        <p class="card__body">
-          Graduate work at Columbia: empirical and parametric bootstrap estimators for the
-          variance of insurance claims, with confidence intervals validated against simulated
-          Poisson processes. The math still pays rent.
-        </p>
-        <ul class="card__stack mono">
-          <li>R</li><li>Bootstrap</li><li>Simulation</li>
-        </ul>
-        <a class="card__link mono" href="bootstrap-variance.pdf">Read the writeup ↗</a>
-      </li>
-
-      <li class="card">
-        <header class="card__head">
-          <span class="card__idx mono">04 / 05</span>
-          <span class="card__tag mono">Actuarial</span>
-        </header>
-        <h3 class="card__title serif">Whole‑life insurance loss distributions.</h3>
-        <p class="card__body">
-          Simulated the loss‑at‑issue random variable for a fully discrete whole‑life policy
-          under Makeham mortality, reconciled against the MLC Illustrative Life Table.
-          The kind of project that quietly teaches you to mistrust closed‑form answers.
-        </p>
-        <ul class="card__stack mono">
-          <li>Excel</li><li>VBA</li><li>Survival models</li>
-        </ul>
-      </li>
-
-      <li class="card">
-        <header class="card__head">
-          <span class="card__idx mono">05 / 05</span>
-          <span class="card__tag mono">ML · for fun</span>
-        </header>
-        <h3 class="card__title serif">Neural style transfer, on a Flask.</h3>
-        <p class="card__body">
-          A small web app that ports the Gatys et al. style‑transfer algorithm into a Flask
-          front end. More an exercise in deployment plumbing than novel research — and a
-          reminder that GPUs are humbling.
-        </p>
-        <ul class="card__stack mono">
-          <li>PyTorch</li><li>Flask</li><li>Docker</li>
-        </ul>
-      </li>
-    </ol>
-  </section>
-
-  <!-- ============== EXPERIENCE ============== -->
-  <section class="experience" id="experience">
-    <div class="rule"><span class="mono dim">§ 03 — Experience</span></div>
-    <h2 class="section-title display">A working <em>chronology</em>.</h2>
-
-    <ol class="timeline">
-      <li class="tl">
-        <span class="tl__year mono">2022 — present</span>
-        <div class="tl__body">
-          <h3 class="serif">Data Engineer II · <span class="ink">Taskrabbit</span></h3>
-          <p>
-            Own large swaths of the analytics data platform. Build dbt models, Airflow DAGs,
-            and the contracts between them. Mentor junior engineers, run on‑call rotations,
-            and occasionally write the dashboard nobody asked for but everyone uses.
-          </p>
-        </div>
-      </li>
-
-      <li class="tl">
-        <span class="tl__year mono">2021 — 2022</span>
-        <div class="tl__body">
-          <h3 class="serif">Data Engineer I · <span class="ink">Taskrabbit</span></h3>
-          <p>
-            Joined as the first Data Engineer on the team. Stood up the early dbt project,
-            drafted the modeling conventions, and helped move reporting off ad‑hoc SQL onto a
-            versioned, tested warehouse.
-          </p>
-        </div>
-      </li>
-
-      <li class="tl">
-        <span class="tl__year mono">2020 — 2021</span>
-        <div class="tl__body">
-          <h3 class="serif">Data Analyst Lead, Maps · <span class="ink">Apple</span></h3>
-          <p>
-            Worked on Apple Maps data quality — surfacing routing anomalies, POI coverage
-            gaps, and the kind of ground‑truth discrepancies that you only notice when a
-            user reports them. Where I learned that "the data is correct" is always a
-            time‑bounded claim.
-          </p>
-        </div>
-      </li>
-
-      <li class="tl">
-        <span class="tl__year mono">2018 — 2020</span>
-        <div class="tl__body">
-          <h3 class="serif">M.A. Statistics · <span class="ink">Columbia University</span></h3>
-          <p>
-            Coursework in advanced data analysis, statistical machine learning, time series,
-            and nonparametric methods. Thesis‑adjacent work on Framingham heart‑study data.
-            Graduated with a 3.43 GPA and a healthy respect for assumptions.
-          </p>
-        </div>
-      </li>
-
-      <li class="tl">
-        <span class="tl__year mono">2014 — 2018</span>
-        <div class="tl__body">
-          <h3 class="serif">B.S. Applied Mathematics · <span class="ink">UW — Madison</span></h3>
-          <p>
-            Actuarial science emphasis with a Certificate in Business. Passed three SOA
-            exams during undergrad, finished with straight A&rsquo;s (A&minus; and above)
-            across coursework, and discovered I liked the data more than the reserves.
-          </p>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-  <!-- ============== STACK ============== -->
-  <section class="stack" id="stack">
-    <div class="rule"><span class="mono dim">§ 04 — Stack &amp; credentials</span></div>
-    <h2 class="section-title display">Tools I reach for <em>without thinking</em>.</h2>
-
-    <div class="stack__grid">
-      <div class="stack__col">
-        <h4 class="mono">Warehouse &amp; modeling</h4>
-        <ul>
-          <li>Snowflake</li>
-          <li>dbt (Core &amp; Cloud)</li>
-          <li>PostgreSQL · MySQL</li>
-          <li>Looker · Tableau</li>
-        </ul>
-      </div>
-      <div class="stack__col">
-        <h4 class="mono">Orchestration</h4>
-        <ul>
-          <li>Apache Airflow 3</li>
-          <li>AWS (S3 · Lambda · EC2)</li>
-          <li>Docker</li>
-          <li>GitHub Actions</li>
-        </ul>
-      </div>
-      <div class="stack__col">
-        <h4 class="mono">Languages</h4>
-        <ul>
-          <li>SQL — fluent</li>
-          <li>Python — daily</li>
-          <li>R — for stats</li>
-          <li>Bash &amp; Make — quietly</li>
-        </ul>
-      </div>
-      <div class="stack__col">
-        <h4 class="mono">Recent certifications</h4>
-        <ul>
-          <li>Astronomer · Airflow 3 DAG Authoring <span class="mono dim">— 2026</span></li>
-          <li>Astronomer · Airflow 3 Fundamentals <span class="mono dim">— 2026</span></li>
-          <li>AWS Certified Cloud Practitioner <span class="mono dim">— 2025</span></li>
-          <li>TestDome SQL Certification <span class="mono dim">— 2020</span></li>
-        </ul>
-      </div>
+  <section id="record" data-spine-label="03 Record">
+    <div class="frame">
+      <p class="kicker"><span>03</span> — Record</p>
+      <h2>Where, and when.</h2>
+      <ol class="record">
+        <li>
+          <p class="record__when"><time datetime="2022-11">Nov 2022</time> – Present</p>
+          <h3>Data Engineer II</h3>
+          <p class="stand">Taskrabbit, Inc. · San Francisco, CA. Marketplace platform — IKEA Group. Terabyte-scale Snowflake warehouse.</p>
+        </li>
+        <li>
+          <p class="record__when"><time datetime="2021-09">Sep 2021</time> – <time datetime="2022-10">Oct 2022</time></p>
+          <h3>Data Engineer I</h3>
+          <p class="stand">Taskrabbit, Inc. · San Francisco, CA.</p>
+        </li>
+        <li>
+          <p class="record__when"><time datetime="2020-12">Dec 2020</time> – <time datetime="2021-09">Sep 2021</time></p>
+          <h3>Data Analyst Lead</h3>
+          <p class="stand">Apple (via Apex Systems) · Sunnyvale, CA.</p>
+        </li>
+        <li>
+          <p class="record__when"><time datetime="2018-09">Sep 2018</time> – <time datetime="2019-12">Dec 2019</time></p>
+          <h3>M.A. in Statistics</h3>
+          <p class="stand">Columbia University · New York, NY. Coursework: Data Mining, Databases, Data Science, Time Series Analysis, Nonparametric Methods.</p>
+        </li>
+        <li>
+          <p class="record__when"><time datetime="2014-09">Sep 2014</time> – <time datetime="2018-05">May 2018</time></p>
+          <h3>B.S. Applied Mathematics, Actuarial Science</h3>
+          <p class="stand">University of Wisconsin–Madison.</p>
+        </li>
+      </ol>
     </div>
   </section>
-
-  <!-- ============== GALLERY ============== -->
-  <section class="gallery" id="gallery">
-    <div class="rule"><span class="mono dim">§ 05 — Gallery</span></div>
-    <h2 class="section-title display">Outside the <em>terminal</em>.</h2>
-
-    <div class="gallery__grid">
-      <figure class="g g--tall"><img src="images/gallery-family.jpg" alt=""/><figcaption class="mono dim">Pl. II — family.</figcaption></figure>
-      <figure class="g"><img src="images/gallery-light.jpg" alt=""/><figcaption class="mono dim">Pl. III — light.</figcaption></figure>
-      <figure class="g"><img src="images/gallery-madison.jpg" alt=""/><figcaption class="mono dim">Pl. IV — Madison.</figcaption></figure>
-      <figure class="g g--wide"><img src="images/gallery-pause.jpg" alt=""/><figcaption class="mono dim">Pl. V — pause.</figcaption></figure>
-      <figure class="g"><img src="images/gallery-city.jpg" alt=""/><figcaption class="mono dim">Pl. VI — city.</figcaption></figure>
-      <figure class="g"><img src="images/gallery-road.jpg" alt=""/><figcaption class="mono dim">Pl. VII — road.</figcaption></figure>
-      <figure class="g g--tall"><img src="images/gallery-winter.jpg" alt=""/><figcaption class="mono dim">Pl. VIII — winter.</figcaption></figure>
-      <figure class="g"><img src="images/gallery-friends.jpg" alt=""/><figcaption class="mono dim">Pl. IX — friends.</figcaption></figure>
-    </div>
-  </section>
-
-  <!-- ============== COLOPHON / FOOTER ============== -->
-  <footer class="colophon" id="contact">
-    <div class="rule"><span class="mono dim">§ 06 — Colophon</span></div>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span class="serif italic">Let&rsquo;s build something honest&nbsp;—&nbsp;</span>
-        <span class="serif italic">Let&rsquo;s build something honest&nbsp;—&nbsp;</span>
-        <span class="serif italic">Let&rsquo;s build something honest&nbsp;—&nbsp;</span>
-        <span class="serif italic">Let&rsquo;s build something honest&nbsp;—&nbsp;</span>
-      </div>
-    </div>
-
-    <div class="colophon__grid">
-      <div>
-        <p class="mono dim">Reach me</p>
-        <a class="ink big" href="mailto:jchen@taskrabbit.com">jchen@taskrabbit.com</a>
-      </div>
-      <div>
-        <p class="mono dim">Elsewhere</p>
-        <ul class="links">
-          <li><a href="https://github.com/Caspar0-0">GitHub ↗</a></li>
-          <li><a href="https://www.linkedin.com/in/junjie-caspar-chen-901157127">LinkedIn ↗</a></li>
-          <li><a href="resume.html">Résumé (HTML) ↗</a></li>
-          <li><a href="Caspar_Chen_Resume_2026.pdf">Résumé (PDF) ↗</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="mono dim">Colophon</p>
-        <p class="small">
-          Set in <em>Fraunces</em> and <em>JetBrains&nbsp;Mono</em>. Composed by hand in
-          plain HTML &amp; CSS. No frameworks, no trackers, no analytics —
-          just text that loads.
-        </p>
-      </div>
-    </div>
-
-    <div class="footline mono">
-      <span>© MMXXVI — J. C. Chen</span>
-      <span>Made in Fremont, CA</span>
-      <span>v 2.0 · ed. <em>quant editorial</em></span>
-    </div>
-  </footer>
 
 </main>
 
+<footer class="end" id="contact" data-spine-label="04 Reach">
+  <div class="frame">
+    <p class="kicker"><span>04</span> — Reach</p>
+    <h2><a href="mailto:jc5067@columbia.edu">jc5067@columbia.edu</a></h2>
+    <div class="colophon">
+      <div>
+        <p class="kicker">Also</p>
+        <ul>
+          <li><a href="tel:+12072864242">(207) 286-4242</a></li>
+          <li><a href="https://github.com/Caspar0-0" target="_blank" rel="noopener noreferrer">GitHub <span class="sr">(opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="kicker">Résumé</p>
+        <ul>
+          <li><a href="resume.html">Read the HTML</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="kicker">Colophon</p>
+        <p>Set in Bodoni Moda and IBM Plex, self-hosted. Static HTML and CSS. No analytics. Facts follow the 2026 résumé.</p>
+      </div>
+    </div>
+    <p class="legal">
+      <span>© 2026 Caspar Chen</span>
+      <span>Taskrabbit, San Francisco</span>
+    </p>
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
 </body>
 </html>

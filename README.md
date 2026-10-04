@@ -1,58 +1,39 @@
 # caspar0-0.github.io
 
-Personal site for **Junjie "Caspar" Chen** — Data Engineer at Taskrabbit.
+Personal site for **Caspar Chen**, Data Engineer II at Taskrabbit.
 Lives at **https://caspar0-0.github.io/**.
 
-A single-page editorial portfolio written in plain HTML + CSS.
-No build step, no framework, no trackers — just static files served by GitHub Pages.
+A static exhibition of the 2026 résumé. Plain HTML, CSS, and a short script.
+No build step, no framework, no analytics. Fonts are self-hosted.
 
 ## Structure
 
 ```
 .
-├── index.html              # The portfolio (single page, all sections)
-├── resume.html             # Print-ready résumé — click "Print / Save PDF"
-├── stylesheet.css          # All styles
-├── bootstrap-variance.pdf       # Columbia stats writeup linked from §02 / Card 03
-├── Caspar_Chen_Resume_2026.pdf  # Current résumé PDF (linked from footer)
-├── images/                 # Portrait + gallery photos
-│   ├── caspar-portrait.png
-│   └── gallery-*.jpg
-└── README.md
+├── index.html                      # Portfolio
+├── resume.html                     # Résumé, screen and print
+├── stylesheet.css
+├── fonts.css
+├── fonts/                          # Bodoni Moda and IBM Plex
+├── site.js                         # Section spy, metric contract, release path, trace
+├── favicon.svg
+└── images/                         # Archive photographs, not used on the page
 ```
 
-## Design notes
+## Design
 
-- **Type**: *Geist* (sans, hero name) · *Instrument Serif* / *Fraunces* (display + body) · *JetBrains Mono* (labels). All via Google Fonts.
-- **Palette**: warm paper `#f1ece1`, ink `#1a1a17`, cinnabar accent `#b8431d`. The hero section flips to near-black for contrast.
-- **Layout**: single page with anchored sections — `#work`, `#experience`, `#stack`, `#gallery`, `#contact`.
+The page leads with the skill vocabulary, and with how he uses AI: Ask Taskrabbit, Claude, dbt MCP, the semantic layer, and LLM guardrails. Bodoni Moda carries the name and the skill lines. IBM Plex Sans and IBM Plex Mono carry the record.
+
+The HTML résumé is the readable copy of the 2026 record. The site does not publish a PDF.
 
 ## Local preview
 
-Nothing to install. Open `index.html` directly:
-
-```bash
-open index.html
-```
-
-Or serve the folder if you want clean URLs:
-
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
 ```
+
+Then open http://localhost:8000.
 
 ## Deploying
 
-GitHub Pages is configured to publish the `master` branch root. Push to `master` and the live site updates within a minute or so. Verify the deploy:
-
-```bash
-gh run list --limit 3
-```
-
-## Updating the résumé
-
-Edit `resume.html`, open it in a browser, click **Print / Save PDF**. The page is tuned for US Letter and prints to one page.
-
----
-© Junjie (Caspar) Chen · Fremont, CA
+GitHub Pages publishes the `master` branch root.
