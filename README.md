@@ -1,6 +1,6 @@
 # caspar0-0.github.io
 
-Personal site for **Junjie (Caspar) Chen**, Data Engineer II at Taskrabbit.
+Personal site for **Caspar Chen**, Data Engineer II at Taskrabbit.
 Lives at **https://caspar0-0.github.io/**.
 
 A static exhibition of the 2026 résumé. Plain HTML, CSS, and a short script.

@@ -1,4 +1,4 @@
-/* Close — a reconciliation document for Junjie (Caspar) Chen.
+/* Close — a site for Caspar Chen.
    Display: Bodoni Moda. Text: IBM Plex Sans. Figures and labels: IBM Plex Mono. */
 
 :root {
@@ -110,6 +110,7 @@ a { color: inherit; }
   font-size: 1.85rem;
   line-height: 1;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 .brand__meta {
   font-family: var(--mono);
